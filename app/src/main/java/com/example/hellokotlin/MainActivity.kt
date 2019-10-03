@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 
+const val TAG = "MainActivity"
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,10 +17,20 @@ class MainActivity : AppCompatActivity() {
 
         doSomething()
 
+        Log.d(TAG, "onCreate")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, "onResume")
     }
 
     fun doSomething() {
         println("hello")
-
     }
 }
